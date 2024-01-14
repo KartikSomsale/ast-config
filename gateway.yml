@@ -1,0 +1,43 @@
+management:
+  endpoint:
+    info:
+      enabled: true
+server:
+  port: 8080
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*" 
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: auth
+          uri: lb://auth-service
+          predicates:
+            - Path=/dev/auth/**
+          filters:
+            - RewritePath=/dev/auth/(?<path>.*), /$\{path}
+        - id: audit
+          uri: lb://audit-service
+          predicates:
+            - Path=/dev/audit/**
+          filters:
+            - RewritePath=/dev/audit/(?<path>.*), /$\{path}
+        - id: lookup
+          uri: lb://lookup-service
+          predicates:
+            - Path=/dev/lookup/**
+          filters:
+            - RewritePath=/dev/lookup/(?<path>.*), /$\{path}
+        - id: communication
+          uri: lb://communication-service
+          predicates:
+            - Path=/dev/communication/**
+          filters:
+            - RewritePath=/dev/communication/(?<path>.*), /$\{path}
