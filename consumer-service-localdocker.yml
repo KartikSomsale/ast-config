@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localdb:3306/ez_lc_nxgen?useUnicode=true&characterEncoding=UTF-8&connectionCollation=utf8_general_ci&characterSetResults=utf8
+    username: root
+    password: lc123

@@ -1,0 +1,16 @@
+server:
+  port: 8082
+management:
+  endpoint:
+    info:
+      enabled: true
+api:
+  version: 1.0-beta
+security:
+  oauth2:
+    client:
+      clientId: consumer-service
+      clientSecrete: consumer
+      accessTokenUri: http://gateway:8080/dev/auth/oauth/token/
+      grant_type: client_credentials
+      scope: server

@@ -1,0 +1,16 @@
+server:
+  port: 8086
+management:
+  endpoint:
+    info:
+      enabled: true
+api:
+  version: 1.0-beta
+security:
+  oauth2:
+    client:
+      clientId: lookup-service
+      clientSecrete: lookup
+      accessTokenUri: http://gateway:8080/dev/auth/oauth/token/
+      grant_type: client_credentials
+      scope: server

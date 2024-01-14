@@ -1,0 +1,83 @@
+management:
+  endpoint:
+    info:
+      enabled: true
+server:
+  port: 80
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*" 
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: auth
+          uri: lb://auth-service
+          predicates:
+            - Path=/api/auth/**
+          filters:
+            - RewritePath=/api/auth/(?<path>.*), /$\{path}
+        - id: audit
+          uri: lb://audit-service
+          predicates:
+            - Path=/api/audit/**
+          filters:
+            - RewritePath=/api/audit/(?<path>.*), /$\{path}
+        - id: corporate
+          uri: lb://corporate-service
+          predicates:
+            - Path=/api/corporate/**
+          filters:
+            - RewritePath=/api/corporate/(?<path>.*), /$\{path}
+        - id: owner
+          uri: lb://owner-service
+          predicates:
+            - Path=/api/owner/**
+          filters:
+            - RewritePath=/api/owner/(?<path>.*), /$\{path}
+        - id: consumer
+          uri: lb://consumer-service
+          predicates:
+            - Path=/api/consumer/**
+          filters:
+            - RewritePath=/api/consumer/(?<path>.*), /$\{path}
+        - id: booking
+          uri: lb://booking-service
+          predicates:
+            - Path=/api/booking/**
+          filters:
+            - RewritePath=/api/booking/(?<path>.*), /$\{path}
+        - id: lookup
+          uri: lb://lookup-service
+          predicates:
+            - Path=/api/lookup/**
+          filters:
+            - RewritePath=/api/lookup/(?<path>.*), /$\{path}
+        - id: document
+          uri: lb://document-service
+          predicates:
+            - Path=/api/document/**
+          filters:
+            - RewritePath=/api/document/(?<path>.*), /$\{path}
+        - id: sync
+          uri: lb://sync-service
+          predicates:
+            - Path=/api/sync/**
+          filters:
+            - RewritePath=/api/sync/(?<path>.*), /$\{path}
+        - id: communication
+          uri: lb://communication-service
+          predicates:
+            - Path=/api/communication/**
+          filters:
+            - RewritePath=/api/communication/(?<path>.*), /$\{path}
+    inetutils:
+      preferred-networks:
+        - 172.33
+        - 10.0

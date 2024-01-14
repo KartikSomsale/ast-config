@@ -1,0 +1,21 @@
+server:
+  port: 8083
+management:
+  endpoint:
+    info:
+      enabled: true
+spring:
+  datasource:
+    url: jdbc:mysql://lorry-circle-dev.cgiqfxwnfwyk.ap-south-1.rds.amazonaws.com:3306/ez_lorry_db_alpha?useUnicode=true&characterEncoding=UTF-8&connectionCollation=utf8_general_ci&characterSetResults=utf8
+    username: root
+    password: hegde123
+api:
+  version: 1.0-beta
+security:
+  oauth2:
+    client:
+      clientId: corporate-service
+      clientSecrete: corporate
+      accessTokenUri: http://gateway:8080/dev/auth/oauth/token/
+      grant_type: client_credentials
+      scope: server

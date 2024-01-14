@@ -1,0 +1,24 @@
+lc:
+  auth:
+    key: q3t6w9z$C&F)J@NcQfTjWnZr4u7x!A%D*G-KaPdSgUkXp2s5v8y/B?E(H+MbQeTh
+    defaultExpiry: 300
+  common:
+    kms:
+      accessKey: AKIA5N4J5CZWXPXVNPT7
+      secretKey: 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
+      keyId: arn:aws:kms:ap-south-1:923170313837:key/dba0af1d-ac18-4661-ae93-8d25f10a2a21
+      region: ap-south-1
+      keyAlias: arn:aws:kms:ap-south-1:923170313837:alias/LCEncryptionKey
+spring:
+  datasource:
+    url: jdbc:mysql://${DB_SERVER}?useUnicode=true&characterEncoding=UTF-8&connectionCollation=utf8_general_ci&characterSetResults=utf8
+    username: root
+    password: lorrycircle123
+api:
+  version: 1.0-beta
+feign:
+  url: ${BASE_URL}/lookup
+  communication: ${BASE_URL}/communication
+  audit: ${BASE_URL}/audit
+  booking: ${BASE_URL}/booking
+  payment: ${BASE_URL}/payment

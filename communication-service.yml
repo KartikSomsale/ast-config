@@ -1,0 +1,47 @@
+server:
+  port: 8089
+management:
+  endpoint:
+    info:
+      enabled: true
+api:
+  version: 1.0-beta
+security:
+  oauth2:
+    client:
+      clientId: communication-service
+      clientSecrete: communication
+      accessTokenUri: http://gateway:8080/auth/oauth/token/
+      grant_type: client_credentials
+      scope: server
+spring:
+  mail:
+    host: smtp.zoho.in
+    port: 587
+    username: no-reply@lorrycircle.com
+    password: Raghuis033#
+    transport:
+      protocol: smtp
+    properties:
+      mail.smtp.starttls.enable: true
+      mail.smtp.auth: true
+      mail.smtp.debug: true
+lc:
+  email:
+    defaultSender: no-reply@lorrycircle.com
+  sms:
+    url: http://sms.slvtechnologies.in/REST/sendsms1
+    username: LORRYC1
+    password: 6842789a7bXX1
+    senderId: LORRYC1
+    accountusagetypeid: 1
+    entityid: 17011592304924200711
+  notification:
+    url: https://fcm.googleapis.com/fcm/send
+    key: AIzaSyC9oEJqDOpINByAI42ZL7XAHPzWmM-XCwI
+  sync:
+    url: https://2iprkna5mrf3hczfldtz4tuibq.appsync-api.ap-south-1.amazonaws.com
+    keyId: da2-lktpf6fbjzfxzemlomsgn32brq
+  refresh:
+    url: https://5gs4ukwjurghbjjnxiuzzlo2gu.appsync-api.ap-south-1.amazonaws.com
+    keyId: da2-b34mh2fofbectaow4soxggccsi

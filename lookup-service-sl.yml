@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:mysql://${DB_SERVER}?useUnicode=true&characterEncoding=UTF-8&connectionCollation=utf8_general_ci&characterSetResults=utf8
+    username: root
+    password: lorrycircle123
+security:
+  oauth2:
+    client:
+      clientId: lookup-service
+      clientSecrete: lookup
+      accessTokenUri: ${ACCESS_TOKEN_URI}
+      grant_type: client_credentials
+      scope: server
+feign:
+  url: ${BASE_URL}/auth
+  plainUrl: ${BASE_URL}
+redirect:
+  url: ${BASE_URL}/customer/orders
+  plainUrl: ${BASE_URL}

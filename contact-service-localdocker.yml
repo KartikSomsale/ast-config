@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localdb:3306/ast_db?useUnicode=true&characterEncoding=UTF-8&connectionCollation=utf8_general_ci&characterSetResults=utf8
+    username: root
+    password: ast123
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+logging:
+  file:
+    name: /var/logs/lc_app/contact.log
+  logback:
+    rollingpolicy:
+      max-history: 10
+      max-file-size: 10MB
+  level:
+    root: "info"
+    org.springframework.web: "debug"
+    org.hibernate: "error"
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n" # Console log format
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n" # File log format

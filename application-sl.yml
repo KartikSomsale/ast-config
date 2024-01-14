@@ -1,0 +1,12 @@
+security:
+  oauth2:
+    resource:
+      user-info-uri: ${USER_INFO_URI}
+lc:
+  common:
+    kms:
+      accessKey: AKIA5N4J5CZWXPXVNPT7
+      secretKey: 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
+      keyId: arn:aws:kms:ap-south-1:923170313837:key/dba0af1d-ac18-4661-ae93-8d25f10a2a21
+      region: ap-south-1
+      keyAlias: arn:aws:kms:ap-south-1:923170313837:alias/LCEncryptionKey

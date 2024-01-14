@@ -1,0 +1,32 @@
+server:
+  port: 4001
+management:
+  endpoint:
+    info:
+      enabled: true
+lc:
+  auth:
+    key: q3t6w9z$C&F)J@NcQfTjWnZr4u7x!A%D*G-KaPdSgUkXp2s5v8y/B?E(H+MbQeTh
+    defaultExpiry: 300
+  common:
+    kms:
+      accessKey: AKIA3ZM4DLDNDXBUJ4JA
+      secretKey: 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
+      keyId: arn:aws:kms:ap-south-1:810465581274:key/ebbfc91e-7f9d-46c9-93c5-849ceba71ba5
+      region: ap-south-1
+      keyAlias: arn:aws:kms:ap-south-1:810465581274:alias/LCEncryptionKey
+spring:
+  datasource:
+    url: jdbc:mysql://162.246.249.141:3306/ez_lc_nxgen?useUnicode=true&characterEncoding=UTF-8&connectionCollation=utf8_general_ci&characterSetResults=utf8
+    username: ez_lc_nxgen_usr
+    password: OF7l2r!2j5JbWz(g
+api:
+  version: 1.0-beta
+feign:
+  url: https://dbqa-api.lorrycircle.com/api/lookup
+  communication: https://dbqa-api.lorrycircle.com/api/communication
+  plianUrl: https://dbqa-api.lorrycircle.com/api/
+  audit: https://dbqa-api.lorrycircle.com/api/audit
+  booking: https://dbqa-api.lorrycircle.com/api/booking
+  payment: https://dbqa-api.lorrycircle.com/api/payment
+  document: https://dbqa-api.lorrycircle.com/api/document
