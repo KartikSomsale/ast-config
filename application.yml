@@ -1,0 +1,8 @@
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://gateway:8080/dev/auth/users/current/
+springdoc:
+  swagger-ui:
+    enabled: true
+    config-url: /v3/api-docs

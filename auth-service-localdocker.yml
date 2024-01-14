@@ -1,0 +1,42 @@
+server:
+  port: 4001
+management:
+  endpoint:
+    info:
+      enabled: true
+lc:
+  auth:
+    key: q3t6w9z$C&F)J@NcQfTjWnZr4u7x!A%D*G-KaPdSgUkXp2s5v8y/B?E(H+MbQeTh
+    defaultExpiry: 432000
+  common:
+    kms:
+      accessKey: AKIA3ZM4DLDNDXBUJ4JA
+      secretKey: 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
+      keyId: arn:aws:kms:ap-south-1:810465581274:key/ebbfc91e-7f9d-46c9-93c5-849ceba71ba5
+      region: ap-south-1
+      keyAlias: arn:aws:kms:ap-south-1:810465581274:alias/LCEncryptionKey
+  dynamic:
+    url: https://lorrycircle.com
+    domain: https://lorry.page.link
+    key: AIzaSyAmgrEwtgugxU4oN9tSyiULZ6cuX-KXwKI
+    androidPackageName: com.lorrycircle
+    iosBundleId: com.lorrycircle
+    iosAppStoreId: 1527118201
+    iosIpadBundleId: com.lorrycircle
+spring:
+  datasource:
+    url: jdbc:mysql://localdb:3306/ast_db?useUnicode=true&characterEncoding=UTF-8&connectionCollation=utf8_general_ci&characterSetResults=utf8
+    username: root
+    password: ast123
+api:
+  version: 1.0-beta
+feign:
+  url: http://gateway:8080/dev/lookup
+  communication: http://gateway:8080/dev/communication
+  plianUrl: http://gateway:8080/dev/
+  audit: http://gateway:8080/dev/audit
+  booking: http://gateway:8080/dev/booking
+  payment: http://gateway:8080/dev/payment
+  crm: http://gateway:8080/dev/crm
+  referral: http://gateway:8080/dev/referral
+  document: http://gateway:8080/dev/document
