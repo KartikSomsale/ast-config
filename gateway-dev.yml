@@ -3,7 +3,7 @@ management:
     info:
       enabled: true
 server:
-  port: 81
+  port: 8080
 spring:
   cloud:
     gateway:
@@ -12,7 +12,7 @@ spring:
           '[/**]':
             allowedOrigins: "*"
             allowedMethods: "*"
-            allowedHeaders: "*" 
+            allowedHeaders: "*"
       discovery:
         locator:
           enabled: true
@@ -29,57 +29,15 @@ spring:
             - Path=/dev/audit/**
           filters:
             - RewritePath=/dev/audit/(?<path>.*), /$\{path}
-        - id: corporate
-          uri: lb://corporate-service
-          predicates:
-            - Path=/corporate/**
-          filters:
-            - RewritePath=/corporate/(?<path>.*), /$\{path}
-        - id: owner
-          uri: lb://owner-service
-          predicates:
-            - Path=/owner/**
-          filters:
-            - RewritePath=/owner/(?<path>.*), /$\{path}
-        - id: consumer
-          uri: lb://consumer-service
-          predicates:
-            - Path=/consumer/**
-          filters:
-            - RewritePath=/consumer/(?<path>.*), /$\{path}
-        - id: booking
-          uri: lb://booking-service
-          predicates:
-            - Path=/dev/booking/**
-          filters:
-            - RewritePath=/dev/booking/(?<path>.*), /$\{path}
         - id: lookup
           uri: lb://lookup-service
           predicates:
             - Path=/dev/lookup/**
           filters:
             - RewritePath=/dev/lookup/(?<path>.*), /$\{path}
-        - id: document
-          uri: lb://document-service
-          predicates:
-            - Path=/dev/document/**
-          filters:
-            - RewritePath=/dev/document/(?<path>.*), /$\{path}
-        - id: payment
-          uri: lb://payment-service
-          predicates:
-            - Path=/dev/payment/**
-          filters:
-            - RewritePath=/dev/payment/(?<path>.*), /$\{path}
         - id: communication
           uri: lb://communication-service
           predicates:
             - Path=/dev/communication/**
           filters:
             - RewritePath=/dev/communication/(?<path>.*), /$\{path}
-        - id: report
-          uri: lb://report-service
-          predicates:
-            - Path=/dev/report/**
-          filters:
-            - RewritePath=/dev/report/(?<path>.*), /$\{path}

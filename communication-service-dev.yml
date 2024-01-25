@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://162.246.248.214:3306/ast_db?useUnicode=true&characterEncoding=UTF-8&connectionCollation=utf8_general_ci&characterSetResults=utf8
+    username: lc_devuat_suser
+    password: z6KuXnrE
+feign:
+  url:
+    plainUrl: http://gateway:8080/dev
+    auth: http://gateway:8080/dev/auth
+    audit: http://gateway:8080/dev/audit
+    communication: http://gateway:8080/dev/communication
+    booking: http://localhost:8080/dev/booking
+    lookup: http://localhost:8080/dev/lookup
