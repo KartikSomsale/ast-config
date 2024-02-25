@@ -25,9 +25,9 @@ lc:
     iosIpadBundleId: com.lorrycircle
 spring:
   datasource:
-    url: jdbc:mysql://162.246.248.214:3306/ast_db?useUnicode=true&characterEncoding=UTF-8&connectionCollation=utf8_general_ci&characterSetResults=utf8
-    username: lc_devuat_suser
-    password: z6KuXnrE
+    url: jdbc:mysql://192.168.1.115:3306/ast_db?useUnicode=true&characterEncoding=UTF-8&connectionCollation=utf8_general_ci&characterSetResults=utf8
+    username: ast-admin
+    password: ta@AST2023
 api:
   version: 1.0-beta
 feign:
